@@ -1,0 +1,9 @@
+
+public class MiniMaxPlayer implements TicTacToePlayer{
+	
+	public Move getMove(TicTacToeGame game) {
+		// TODO Auto-generated method stub
+		return null;
+	
+	}
+}

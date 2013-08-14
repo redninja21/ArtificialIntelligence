@@ -1,0 +1,6 @@
+
+public class AdvancedPlayer implements TicTacToePlayer {
+	public Move getMove(TicTacToeGame game){
+		return null;
+	}
+}

@@ -1,0 +1,73 @@
+
+public class MiniMaxPlayer implements TicTacToePlayer{
+	private char me;
+	
+	public Move getMove(TicTacToeGame game) {
+		me = game.getCurrentPlayer();
+		return max(game);
+	
+	}
+	
+	private Move max(TicTacToeGame game){
+		Move[] moves = getAllMoves(game);
+		if(moves.length ==1){
+			TicTacToeGame g = new TicTacToeGame(game);
+			g.makeMove(moves[0]);
+			if(g.getGameWinner() == me){
+				moves[0].utility = 1;
+			}
+			else if (g.isDraw()){
+				moves[0].utility = 0;
+			}
+			else{
+				moves[0].utility = -1;
+			}
+			return moves[0];
+		}
+		
+		Move best = moves[0];
+		for(int i = 0; i < moves.length; i++){
+			
+		}
+	}
+	
+	private Move min(TicTacToeGame game){
+		
+		Move[] moves = getAllMoves(game);
+		if(moves.length ==1){
+			TicTacToeGame g = new TicTacToeGame(game);
+			g.makeMove(moves[0]);
+			if(g.getGameWinner() == me){
+				moves[0].utility = 1;
+			}
+			else if (g.isDraw()){
+				moves[0].utility = 0;
+			}
+			else{
+				moves[0].utility = -1;
+			}
+			return moves[0];
+		}
+	}
+	
+	private Move[]getAllMoves(TicTacToeGame game){
+		int moveCount = 0;
+		for(int x = 0; x < 3; x++){
+			for(int y = 0; y< 3; y++){
+				if(game.canPlacePieceAt(x, y))
+					moveCount++;
+			}
+		}
+		Move[] moves = new Move[moveCount];
+		int index = 0;
+		for(int x =0; x<3; x++){
+			for(int y = 0; y<3; y++){
+				if(game.canPlacePieceAt(x, y)){
+					moves[index] = new Move(x,y);
+					index++;
+				}
+			}
+		}
+		return moves;
+	}
+}

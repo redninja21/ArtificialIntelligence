@@ -1,0 +1,17 @@
+
+public class AdvancedPlayer implements TicTacToePlayer {
+	private char get(TicTacToeGame game,int x, int y){
+		return game.getPieceAt(x, y);
+	}
+	public Move getMove(TicTacToeGame g){
+		for(int x = 0; x < 3; x++){
+			if(get(g,0,0) != ' ' && get(g,0,0) == get(g,0,1) && get(g,0,2) == ' '){
+				return new Move(x,2);
+			}
+			if(get(g,x,0) != ' ' && get(g,x,0) == get(g,x,1) && get(g,x,2) == ' '){
+				return new Move(x,1);
+			}
+		}
+		return null;
+	}
+}

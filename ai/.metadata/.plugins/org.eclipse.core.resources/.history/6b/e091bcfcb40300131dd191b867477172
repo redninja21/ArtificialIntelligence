@@ -1,0 +1,37 @@
+
+public class MiniMaxPlayer implements TicTacToePlayer{
+	
+	public Move getMove(TicTacToeGame game) {
+		return max(game);
+	
+	}
+	
+	private Move max(TicTacToeGame game){
+		
+	}
+	
+	private Move min(TicTacToeGame game){
+		
+	}
+	
+	private Move[]getAllMoves(TicTacToeGame game){
+		int moveCount = 0;
+		for(int x = 0; x < 3; x++){
+			for(int y = 0; y< 3; y++){
+				if(game.canPlacePieceAt(x, y))
+					moveCount++;
+			}
+		}
+		Move[] moves = new Move[moveCount];
+		int index = 0;
+		for(int x =0; x<3; x++){
+			for(int y = 0; y<3; y++){
+				if(game.canPlacePieceAt(x, y)){
+					moves[index] = new Move(x,y);
+					index++;
+				}
+			}
+		}
+		return moves;
+	}
+}

@@ -1,0 +1,13 @@
+
+public class ELIZA {
+	
+	public static void main(String[]args){
+		ELIZA eliza = new ELIZA();
+		eliza.ask("");
+	}
+	
+	public String ask(String question){
+		
+	}
+	
+}

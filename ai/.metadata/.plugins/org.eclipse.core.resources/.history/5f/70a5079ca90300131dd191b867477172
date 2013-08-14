@@ -1,0 +1,10 @@
+
+public class BasicPlayer implements TicTacToePlayer {
+
+	@Override
+	public Move getMove(TicTacToeGame game) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
