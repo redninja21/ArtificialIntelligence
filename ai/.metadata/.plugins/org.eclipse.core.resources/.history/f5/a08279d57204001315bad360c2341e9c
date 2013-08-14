@@ -1,0 +1,14 @@
+package prisonersdilemma;
+
+public class VariableAgent implements Agent {
+
+	public VariableAgent(double niceness){
+		this.niceness = niceness;
+	}
+	
+	public boolean Cooperate() {
+		
+		return false;
+	}
+
+}

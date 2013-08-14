@@ -1,0 +1,7 @@
+package prisonersdilemma;
+
+public class Competition {
+	public static void main(String[]args){
+		
+	}
+}

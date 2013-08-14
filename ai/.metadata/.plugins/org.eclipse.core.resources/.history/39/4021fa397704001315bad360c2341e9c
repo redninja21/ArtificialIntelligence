@@ -1,0 +1,28 @@
+package prisonersdilemma;
+
+public class WinAgent implements Agent {
+
+	private double niceness;
+
+	public WinAgent(double niceness ){
+		this.niceness = niceness;
+	}
+	
+	public boolean Cooperate() {
+		if(Math.random() > niceness){
+			return true;
+		}
+		return false;
+	}
+
+	public void remember(boolean otherPlayerDecision) {
+				
+	}
+
+	@Override
+	public void reset() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

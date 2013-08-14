@@ -1,0 +1,18 @@
+package prisonersdilemma;
+
+public class MemoryAgent implements Agent {
+
+	int otherCooperates = 0;
+	int otherCompetes = 0;
+	
+
+	public boolean Cooperate() {
+				return false;
+	}
+
+	
+	public void remember(boolean otherPlayerDecision) {
+				
+	}
+
+}

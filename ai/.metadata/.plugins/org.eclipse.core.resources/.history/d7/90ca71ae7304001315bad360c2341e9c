@@ -1,0 +1,24 @@
+package prisonersdilemma;
+
+public class VariableAgent implements Agent {
+
+	private double niceness;
+
+	public VariableAgent(double niceness ){
+		this.niceness = niceness;
+	}
+	
+	public boolean Cooperate() {
+		if(Math.random() < niceness){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public void remember(boolean otherPlayerDecision) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

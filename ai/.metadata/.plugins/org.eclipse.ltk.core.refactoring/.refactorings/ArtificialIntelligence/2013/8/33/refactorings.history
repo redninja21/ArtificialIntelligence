@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;VariableAgent.java&apos; to &apos;prisonersdilemma.VariableAgent.java&apos;&#x0A;- Original project: &apos;ArtificialIntelligence&apos;&#x0A;- Destination element: &apos;prisonersdilemma.VariableAgent.java&apos;&#x0A;- Original element: &apos;prisonersdilemma.VariableAgent.java&apos;" description="Copy compilation unit" destination="/src&lt;prisonersdilemma{VariableAgent.java" element1="/src&lt;prisonersdilemma{VariableAgent.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1376439566967" units="1" version="1.0"/>
+</session>

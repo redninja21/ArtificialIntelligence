@@ -1,0 +1,5 @@
+package prisonersdilemma;
+
+public interface Agent {
+	public boolean cooperate();
+}

@@ -1,0 +1,10 @@
+package prisonersdilemma;
+
+public class RandomAgent implements Agent{
+
+	public boolean Cooperate() {
+		
+		return false;
+	}
+
+}

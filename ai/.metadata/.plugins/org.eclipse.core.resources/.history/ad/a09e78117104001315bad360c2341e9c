@@ -1,0 +1,42 @@
+package prisonersdilemma;
+
+public class Competition {
+	Agent one,two;
+	int oneScore = 0, twoScore = 0;
+	public static void main(String[]args){
+		
+	}
+	
+	public Competition(Agent one, Agent two){
+		this.one = one;
+		this.two = two;
+	}
+	
+	public void iterate(int times){
+		for (int i =0;i<times;i++){
+			iterate();
+		}
+	}
+	
+	public void iterate(){
+		boolean oneCooperate = one.Cooperate();
+		boolean twoCooperate = two.Cooperate();
+		
+		if(oneCooperate && twoCooperate){
+			oneScore += 1;
+			twoScore += 1;
+		}
+		if(oneCooperate && !twoCooperate){
+			oneScore += 10;
+			twoScore += 0;
+		}
+		if(!oneCooperate && twoCooperate){
+			oneScore += 0;
+			twoScore += 10;
+		}
+		if(!oneCooperate && !twoCooperate){
+			oneScore += 5;
+			twoScore += 5;
+		}
+	}
+}
