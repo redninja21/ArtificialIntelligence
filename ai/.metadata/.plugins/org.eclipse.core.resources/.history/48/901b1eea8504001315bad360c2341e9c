@@ -1,0 +1,28 @@
+package parsing;
+
+public class Parser {
+
+	Lexer lexer;
+	
+	public Parser(){
+		lexer  = new Lexer();
+	}
+	
+	public Sentence parse(String input){
+		lexer.lex(input);
+		return parseSentence();
+	}
+	
+	public Sentence parseSentence(){
+		Subject subject = parseSubject();
+	}
+	
+	public Subject parseSubject(){
+		String subject = English.get().getSubject(lexer.peekNext() );
+		if(subject != null){
+			System.out.println("Subject[" + lexer.getNext() + "] ");
+		}
+		return null;
+	}
+	
+}

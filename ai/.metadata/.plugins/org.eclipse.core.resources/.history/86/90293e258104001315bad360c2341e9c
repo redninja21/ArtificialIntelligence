@@ -1,0 +1,13 @@
+package parsing;
+
+public class Lexer {
+	
+	String[] lexed;
+	int position = 0;
+	
+	public void lexed(String input){
+		lexed = input.split(" ");
+		position = 0;
+	}
+	
+}

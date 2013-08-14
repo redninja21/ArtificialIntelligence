@@ -1,0 +1,24 @@
+package parsing;
+
+public class Parser {
+
+	Lexer lexer;
+	
+	public Parser(){
+		lexer  = new Lexer();
+	}
+	
+	public Sentence parse(String input){
+		lexer.lex(input);
+		return parseSentence();
+	}
+	
+	public Sentence parseSentence(){
+		
+	}
+	
+	public Subject parseSubject(){
+		
+	}
+	
+}

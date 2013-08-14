@@ -1,0 +1,14 @@
+package parsing;
+
+public class English {
+	English instance = new English();
+	
+	private English(){
+		initializeSubjects();
+	}
+
+	private void initializeSubjects() {
+		
+	}
+	
+}

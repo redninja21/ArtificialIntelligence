@@ -1,0 +1,13 @@
+package parsing;
+
+public class Parser {
+
+	public Sentence parse(String input){
+		
+	}
+	
+	public Sentence parseSentence(String sentence){
+		
+	}
+	
+}

@@ -1,0 +1,24 @@
+package parsing;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class English {
+	private static English instance = new English();
+	private Map <String, String> subject;
+	
+	
+	
+	private English(){
+		initializeSubjects();
+	}
+	
+	public static English get(){
+		return instance;
+	}
+
+	private void initializeSubjects() {
+		subject = new HashMap <String, String> ();
+	}
+	
+}

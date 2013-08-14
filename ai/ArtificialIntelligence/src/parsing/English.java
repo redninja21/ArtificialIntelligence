@@ -1,0 +1,63 @@
+package parsing;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class English {
+	private static English instance = new English();
+	private Map <String, String> subject;
+	private Map<String, String> verbs;
+	private Map<String, String> nouns;
+	
+	
+	
+	private English(){
+		initializeSubjects();
+		initializeVerbs();
+		initializeNouns();
+	}
+	
+	private void initializeNouns() {
+		nouns.put("store", "location");
+		nouns.put("beach","location");
+		nouns.put("dog", "animal");
+	}
+	
+	public String getSubject(String subj){
+		return subject.get(subj);
+	}
+	
+	public String getVerb(String verb){
+		return verbs.get(verb);		
+	}
+	
+	public String getNoun(String noun){
+		return nouns.get(noun);
+	}
+		
+
+	private void initializeVerbs() {
+	    verbs = new HashMap <String, String>();
+		verbs.put("went", "past");
+		verbs.put("go", "present");
+		verbs.put("going", "gerund");
+		
+	}
+
+	public static English get(){
+		return instance;
+	}
+
+	private void initializeSubjects() {
+		subject = new HashMap <String, String> ();
+		subject.put("I", "FP");
+		subject.put("you", "SP");
+		subject.put("he", "TP");
+		subject.put("she", "TP");
+		subject.put("it", "TP");
+		subject.put("me", "FP");
+		subject.put("we", "FPP");
+		subject.put("us", "FPP");
+	}
+	
+}

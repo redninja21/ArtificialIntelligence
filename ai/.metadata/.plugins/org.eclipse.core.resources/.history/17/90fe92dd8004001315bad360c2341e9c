@@ -1,0 +1,9 @@
+package parsing;
+
+public class Lexer {
+	
+	public String[] lex(String input){
+		return input.split(" ");
+	}
+	
+}

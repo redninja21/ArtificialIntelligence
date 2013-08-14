@@ -1,0 +1,24 @@
+package parsing;
+
+public class Lexer {
+	
+	String[] lexed;
+	int position = 0;
+	
+	public void lexed(String input){
+		lexed = input.split(" ");
+		position = 0;
+	}
+	
+	public String getNext(){
+		
+	}
+	
+	public String peekNext(){
+		
+	}
+	
+	public boolean hasNext(){
+		return position < lexed.length();
+	}	
+}
