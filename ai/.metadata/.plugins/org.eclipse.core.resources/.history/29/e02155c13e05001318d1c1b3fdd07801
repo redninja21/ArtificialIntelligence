@@ -1,0 +1,103 @@
+package mancala;
+
+public class Mancala {
+	// Stores representation of mancala board
+	int[] pocket;
+	boolean player = true; // Player 1 = true, Player 2 = false
+	private static final int SIZE = 4;
+
+	public Mancala() {
+		pocket = new int[14];// Number of pockets
+	}
+
+	public boolean playing(int pNum) {
+		if (pNum == 1 && player) {
+			return true;
+		}
+		if (pNum == 2 && !player) {
+			return true;
+		}
+		return false;
+	}
+
+	public void reset() {
+		pocket[0] = 0;
+		pocket[7] = 0;
+		for (int i = 0; i <= 6; i++) {
+			pocket[i] = SIZE;
+		}
+		for (int i = 8; i <= 13; i++) {
+			pocket[i] = SIZE;
+		}
+	}
+
+	public void makeMove(int p) {
+		int movesLeft = 0;
+		if (player) {
+			movesLeft = pocket[p];
+			pocket[p] = 0;
+			for (int i = 1; movesLeft > 0; movesLeft--, i++) {
+				if (p + i >= 14) {
+					pocket[p + i] = 1;
+					pocket[p + i]++;
+				} else {
+					movesLeft = pocket[p + 7];
+					pocket[p + 7] = 0;
+				}
+				pocket[p + i]++;
+			}
+			for (int i = 1; movesLeft > 0; movesLeft--, i++) {
+				if (p + i + 7 >= 14) {
+					pocket[p + i - 6] = 1;
+					pocket[p + i - 7]++;
+					pocket[p + 1]++;
+				} else {
+					movesLeft = pocket[p + 7];
+					pocket[p + 7] = 0;
+				}
+				pocket[p + i]++;
+			}
+		}
+
+	}
+
+	public int[] getMoves() {
+		int count = 0;
+		int[] moves = new int[count];
+		if (player) {
+			for (int i = 0; i <= 6; i++) {
+				if (pocket[i] > 0) {
+					count++;
+				}
+			}
+		} else {
+			for (int i = 8; i <= 13; i++) {
+				if (pocket[i] > 0) {
+					count++;
+				}
+			}
+
+			int index = 0;
+			if (player) {
+				for (int i = 0; i <= 6; i++) {
+					if (pocket[i] > 0) {
+						moves[index] = i;
+						index++;
+					}
+				}
+			} else {
+				for (int i = 8; i <= 13; i++) {
+					if (pocket[i] > 0) {
+						moves[index] = i - 7;
+						index++;
+					}
+				}
+			}
+		}
+		return moves;
+	}
+
+	public void switchPlayer() {
+		player = !player;
+	}
+}

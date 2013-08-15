@@ -1,0 +1,42 @@
+package mancala;
+
+public class Mancala {
+	//Stores representation of mancala board
+	int[] pocket;
+	boolean player = true; //Player 1 = true, Player 2 = false
+	private static final int SIZE = 4;
+	public Mancala(){
+		pocket = new int [14];// Number of pockets
+	}
+	
+	public boolean playing(int pNum){
+		if (pNum == 1 && player){
+			return true;
+		}
+		if(pNum == 2 && !player){
+			return true;
+		}
+		return false;
+	}
+	
+	public void reset(){
+		pocket[0] = 0;
+		pocket[7] = 0;
+		for (int i = 0; i <=6;i++){
+			pocket[i] = SIZE;
+		}
+		for(int i = 8; i <=14; i++){
+			pocket[i] = SIZE;
+		}
+	}
+	
+	public void makeMove(int p){
+		
+	}
+	
+	public int[] getMoves(){
+		
+	}
+	
+	
+}

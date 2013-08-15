@@ -1,0 +1,12 @@
+package mancala;
+
+public class Mancala {
+	
+	int[] pocket;
+	
+	public Mancala(){
+		pocket = new int [14];
+	}
+	
+	
+}

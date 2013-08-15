@@ -1,0 +1,11 @@
+package mancala;
+
+public class MancalaTest {
+	public static void main(String[] args){
+		Mancala board = new Mancala();
+		MiniMaxAgent agent = new MiniMaxAgent(1,5);
+		board.print();
+		board.makeMove(2);
+		board.print();
+	}
+}

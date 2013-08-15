@@ -1,0 +1,36 @@
+package mancala;
+
+public class MiniMaxAgent implements Agent {
+	int depth;
+	int me;
+	public MiniMaxAgent(int depth, int me){
+		this.me = me;
+		this.depth = depth;
+	}
+
+	public Move getMove(Mancala board) {
+		
+		return max(board,depth);
+	}
+	
+	public Move max(Mancala board, int depth){
+		Move[] moves = board.getMoves();
+		for(Move move : moves){
+			Mancala b = new Mancala(board);
+			if(b.makeMove(move)){
+				Move continuation = max(b,depth);
+				move.value = continuation.value;
+			}
+			else{
+				int value = b.evaluate(me);
+				if(value == Integer.MAX_VALUE || value == Integer.MIN_VALUE)
+					move.value = value;
+				Move best = min(b,depth -1);
+			}
+		}
+	}
+	
+	public Move min(Mancala board, int depth){
+		
+	}
+}

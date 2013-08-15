@@ -1,0 +1,23 @@
+package mancala;
+
+public class Mancala {
+	
+	int[] pocket;
+	boolean player = true; //Player 1 = true
+	
+	public Mancala(){
+		pocket = new int [14];
+	}
+	
+	public boolean playing(int pNum){
+		if (pNum == 1 && player){
+			return true;
+		}
+		if(pNum == 2 && !player){
+			return true;
+		}
+		return false;
+	}
+	
+	
+}

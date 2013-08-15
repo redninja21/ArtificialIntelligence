@@ -1,0 +1,10 @@
+package mancala;
+
+public class MiniMaxAgent implements Agent {
+
+	public Move getMove(Mancala board) {
+		
+		return 0;
+	}
+
+}

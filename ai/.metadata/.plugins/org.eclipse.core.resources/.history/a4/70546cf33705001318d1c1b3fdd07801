@@ -1,0 +1,13 @@
+package mancala;
+
+public class Mancala {
+	
+	int[] pocket;
+	boolean player = true;
+	
+	public Mancala(){
+		pocket = new int [14];
+	}
+	
+	
+}
