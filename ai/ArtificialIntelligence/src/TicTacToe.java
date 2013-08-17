@@ -15,7 +15,7 @@ public class TicTacToe extends JApplet implements MouseListener {
 	public void init() {
 		JRootPane rootPane = this.getRootPane();
 		rootPane.putClientProperty("defeatSystemEventQueueCheck", Boolean.TRUE);
-		// provide any initialisation necessary for your JApplet
+		// provide any initialization necessary for your JApplet
 		addMouseListener(this);
 		setSize(400, 400);
 

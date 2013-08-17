@@ -57,49 +57,21 @@ public class Mancala {
 	
 	
 	public boolean makeMove(int p) {
-		int movesLeft = 0;
-		int p2 = p + 7;
-		int current = 0;
-		int i = 0;
-		if (player) {// placeholder
-			movesLeft = pocket[p];
-			pocket[p] = 0;
-			
-			for (i = 1; movesLeft > 0; movesLeft--, i++) {
-				if (current >= 14) {
-					pocket[current] = 1;
-					pocket[current]++;
-				} else {
-					movesLeft = pocket[p + 7];
-					pocket[p + 7] = 0;
-				}
-				pocket[current]++;
-			}
+		//Setup the loop
+		int count = pocket[(player) ? p : p + 7];
+		pocket[(player)? p : p+ 7] = 0;
+		int next = (player) ? p + 1 : p + 8;
+		// For each piece in the pocket
+		for(int i = 0; i < count; i++){
+			// Check for wrap around
+			if(next>13) next = (player) ? 1 : 0;
+			if(!player && next == 7)next++;
+			//Increment the pocket
+			pocket[next]++;
+			//Increment next
+			next++;
 		}
-		for (int a = 1; movesLeft > 0; movesLeft--, a++) {
-			if (p + a >= 14) {
-				pocket[p + a - 13]++;
-				pocket[p + a]++;
-			} else {
-				movesLeft = pocket[p2];
-				pocket[p2] = 0;
-			}
-				for (int b = 1; movesLeft > 0; movesLeft--, b--) {
-					if (p2 + b >= 14) {
-						if (p2 + b == 21) {
-							movesLeft++;
-						} else
-							pocket[p2 + b - 14]++;
-					} else
-						pocket[p2 + b]++;
-				}
-
-				
-			}
-	if (player && (current == 7 || current == 20)) 
-			return true;
-		
-	return false;
+	return (next - 1 == 7 || next - 1 == 0);
 	}
 
 	public Mancala(Mancala other) {

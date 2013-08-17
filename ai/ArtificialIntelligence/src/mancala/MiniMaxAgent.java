@@ -3,6 +3,7 @@ package mancala;
 public class MiniMaxAgent implements Agent {
 	int depth;
 	int me;
+	int count = 0;
 
 	public MiniMaxAgent(int depth, int me) {
 		this.me = me;
@@ -10,12 +11,15 @@ public class MiniMaxAgent implements Agent {
 	}
 
 	public Move getMove(Mancala board) {
-
-		return max(board, depth);
+		count = 0;
+		long time = System.currentTimeMillis();
+		Move m = max(board,depth);
+		System.out.println("Game tree had " + count + " nodes.");
+		System.out.println(System.currentTimeMillis() - time + " ms.");
+		return m;
 	}
 
 	public Move max(Mancala board, int depth) {
-		//TODO: check if there are no available moves
 		Move[] moves = board.getMoves();
 	if(depth == 0 || moves.length == 0){
 		Move foo = new Move(0);
@@ -41,11 +45,10 @@ public class MiniMaxAgent implements Agent {
 		}
 		
 		Move best = new Move(0);
-		int value = best.value;
 		for(Move move: moves){
-			if(move.value > value){
+			if(move.value > best.value){
 				best = move;
-				value = move.value;
+				best.value = move.value;
 			}
 		}
 		return best;
